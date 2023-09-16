@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nombre": "Sofá",
+        "descripcion": "Un cómodo sofá para tu sala de estar.",
+        "imagen": "images/sofa.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Mesa de centro",
+        "descripcion": "Una elegante mesa de centro para tu sala.",
+        "imagen": "images/mesa.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Lámpara",
+        "descripcion": "Una lámpara moderna para iluminar tu hogar.",
+        "imagen": "images/lampara.jpg"
+    }
+]

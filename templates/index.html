@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos de Hogar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <a href="#">Analisis de Sistemas UMG </a>
+    </header>
+    <!-- Sección del héroe -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>¡Disfruta la vida!</h1>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Héroe">
+        </div>
+    </section>
+    
+    <div class="product-container">
+        {% for producto in productos %}
+        <div class="product-card">
+            <h2>{{ producto.nombre }}</h2>
+            <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}" class="product-image">
+            <p>{{ producto.descripcion }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <footer>
+        &copy; 2023 Ing. Byron A. Caal | Analisis de Sistemas UMG 
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; /* Añadido para que el footer se posicione correctamente */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Estilos para la sección del héroe */
+.hero {
+    position: relative; /* Asegura que los elementos internos se posicionen relativos a la sección del héroe */
+    height: 400px; /* Ajusta la altura según tus preferencias */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde de la sección */
+}
+
+/* Estilos para la imagen de fondo del héroe */
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(80%);
+    transform: scale(1.1);
+}
+
+/* Estilos para el texto del héroe */
+.hero-text {
+    position: absolute;
+    top: 50%; /* Centra verticalmente el texto en la sección del héroe */
+    left: 50%; /* Centra horizontalmente el texto en la sección del héroe */
+    transform: translate(-50%, -50%); /* Centra completamente el texto */
+    text-align: center;
+    z-index: 1; /* Asegura que el texto esté sobre la imagen de fondo */
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Estilos del contenido */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    
+}
+
+.product-card {
+    width: calc(33.33% - 20px);
+    margin: 0 10px 20px 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px; /* Agregar margen inferior */
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-description {
+    padding: 10px;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    clear: both;
+    width: 100%;
+    position: absolute;
+    bottom: 0; /* Fija el footer en la parte inferior */
+    margin-top: 20px; /* Agregar margen superior */
+}
+
