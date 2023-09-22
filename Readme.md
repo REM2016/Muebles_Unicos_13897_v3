@@ -31,5 +31,5 @@ La aplicación utiliza las siguientes tecnologías:
 5. Los usuarios pueden explorar los productos y ver información detallada sobre cada uno.
 
 ## Notas Adicionales
-¡Ingenieria en Sistemas te cambia la vida!
+¡Ingenieria en Sistemas te cambia la vida! 
 
