@@ -15,5 +15,12 @@ def index():
     productos = obtener_productos()
     return render_template('index.html', productos=productos)
 
+@app.route('/nuevo')
+def mostrar_nuevo():
+    with open('nuevo.json', 'r') as json_file:
+        datos_nuevo = json.load(json_file)
+    return render_template('nuevo.html', datos=datos_nuevo)
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8585)
