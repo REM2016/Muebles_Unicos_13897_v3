@@ -1,0 +1,18 @@
+[
+    {
+        "id": 4,
+        "nombre": "Sofá cama",
+        "descripcion": "Un versátil sofá cama para recibir invitados en tu sala."
+    },
+    {
+        "id": 5,
+        "nombre": "Escritorio",
+        "descripcion": "Un moderno escritorio para tu espacio de trabajo en casa."
+    },
+    {
+        "id": 6,
+        "nombre": "Mesa de centro",
+        "descripcion": "Una práctica mesa de centro para tu sala de estar."
+    }
+]
+
