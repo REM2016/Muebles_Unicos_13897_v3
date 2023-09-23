@@ -2,37 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Tabla Nuevo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Administrar Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilo para que el navbar tenga el mismo color */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <a href="/">Productos de Hogar</a>
-        <a href="/nuevo">Nuevo</a>
-    </header>
-    <div class="container">
-        <h1>Tabla Nuevo</h1>
-        <table>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Productos de Hogar</a>
+    </nav>
+    <div class="container mt-5">
+        <h1>Administrar Productos</h1>
+        <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                {% for dato in datos %}
+                <!-- Aquí puedes iterar sobre tus productos desde el archivo nuevo.json y llenar la tabla -->
                 <tr>
-                    <td>{{ dato.id }}</td>
-                    <td>{{ dato.nombre }}</td>
-                    <td>{{ dato.descripcion }}</td>
+                    <td>1</td>
+                    <td>Sofá</td>
+                    <td>Un cómodo sofá para tu sala de estar.</td>
+                    <td>
+                        <button class="btn btn-primary">Editar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
                 </tr>
-                {% endfor %}
+                <!-- Repite este bloque para cada producto -->
             </tbody>
         </table>
+        <a href="/" class="btn btn-secondary">Atrás</a>
     </div>
-    <footer>
-        &copy; 2023 Ing. Byron A. Caal | Analisis de Sistemas UMG 
-    </footer>
 </body>
 </html>
+
