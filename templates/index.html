@@ -5,28 +5,23 @@
     <title>Home Suite</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
 </head>
 <body>
-    <header>
+    <header class="navbar">
         <a href="/">
-            <i class="fas fa-home">Catalogo</i> <!-- Ícono de inicio -->
+            <i class="fas fa-home nav-icon"></i>
+            Catálogo
         </a>
         <a href="/nuevo">
-            <i class="fas fa-plus">Nuevo Ingreso</i> <!-- Ícono de nuevo -->
+            <i class="fas fa-plus nav-icon"></i>
+            Nuevo Ingreso
         </a>
     </header>
     
-    <header>
-        <a href="#">Quality Assurance - SW </a>
-    </header>
-    <!-- Sección del héroe -->
     <section class="hero">
+        <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Héroe">
         <div class="hero-text">
             <h1>¡Tranquilo, todo estará bien!</h1>
-        </div>
-        <div class="hero-image">
-            <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Héroe">
         </div>
     </section>
     
@@ -39,11 +34,10 @@
         </div>
         {% endfor %}
     </div>
-    <footer>
-        &copy; 2023 Ing. Byron A. Caal | Aseguramiento de la calidad de SW
-    </footer>
 </body>
 </html>
+
+
 
 
 

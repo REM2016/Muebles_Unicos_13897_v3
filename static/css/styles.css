@@ -1,3 +1,47 @@
+/* Estilo para el navbar */
+.navbar {
+    background-color: #1e2a38;
+    color: #fff;
+    padding: 10px 20px; /* Reducir el espaciado vertical y horizontal */
+    display: flex;
+    justify-content: flex-end; /* Alinear los elementos a la derecha */
+}
+
+.navbar a {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el ícono y el texto */
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px; /* Espaciado entre los enlaces */
+    transition: color 0.3s;
+}
+
+.navbar a .nav-icon {
+    font-size: 18px;
+    margin-left: 5px; /* Ajusta el espaciado entre el ícono y el texto */
+}
+
+.navbar a:hover {
+    color: #f39c12; /* Cambiar color al pasar el mouse */
+}
+
+/* Estilo para la sección de héroe */
+.hero {
+    background-image: url("{{ url_for('static', filename='images/hero.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0; /* Reducir el espaciado vertical */
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -32,6 +76,7 @@ header a {
     font-size: 24px;
     font-weight: bold;
 }
+
 /* Estilos para la sección del héroe */
 .hero {
     position: relative; /* Asegura que los elementos internos se posicionen relativos a la sección del héroe */
@@ -66,8 +111,6 @@ header a {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
-
 /* Estilos del contenido */
 .product-container {
     display: flex;
@@ -75,7 +118,6 @@ header a {
     justify-content: center;
     align-items: flex-start;
     margin-top: 20px;
-    
 }
 
 .product-card {
@@ -118,5 +160,3 @@ footer {
     position: absolute;
     bottom: 0; /* Fija el footer en la parte inferior */
     margin-top: 20px; /* Agregar margen superior */
-}
-
