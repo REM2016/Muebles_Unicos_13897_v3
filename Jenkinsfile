@@ -3,8 +3,8 @@ pipeline {
 
     parameters {
         string(name: 'PROJECT_NAME', defaultValue: 'muebles_unicos', description: 'Nombre del proyecto')
-        string(name: 'DEPENDENCY_TRACK_URL', defaultValue: 'http://localhost:8080/api/v1/projects/{projectId}/components', description: 'URL de la API de Dependency-Track')
-        string(name: 'DTRACK_API_TOKEN', defaultValue: '', description: 'Token de API para Dependency-Track')
+        string(name: 'DEPENDENCY_TRACK_URL', defaultValue: 'http://172.19.0.2:8080/api/v1/projects/{projectId}/components', description: 'URL de la API de Dependency-Track')
+        string(name: 'DTRACK_API_TOKEN', defaultValue: 'odt_AxVzJfr8nIRRnwmrhhPfevSLFnVpr5Lc', description: 'Token de API para Dependency-Track')
     }
 
     stages {
