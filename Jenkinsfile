@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // Generar el archivo BOM
-                    sh './cdx-cli add files --no-input --output-format xml --exclude .git** --exclude cdx-cli --output-file bom.xml'
+                    sh './cdx-cli add files --no-input --output-format xml --exclude .git --exclude cdx-cli --output-file bom.xml'
                 }
             }
         }
