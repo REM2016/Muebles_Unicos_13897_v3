@@ -2,32 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Verificar Git') {
-            steps {
-                // Comprobar si Git está instalado y obtener la versión
-                sh 'git --version'
-            }
-        }
-
         stage('Checkout Código') {
             steps {
-                // Clonar el código del repositorio
                 checkout scm
             }
         }
 
-        stage('Preparar Entorno') {
+        stage('Instalar Dependencias') {
             steps {
-                // Crear entorno virtual e instalar dependencias
-                sh 'python3 -m venv venv'
-                sh '. venv/bin/activate && pip install -r requirements.txt'
+                // Instalar dependencias sin entorno virtual
+                sh 'pip3 install -r requirements.txt'
             }
         }
 
-        stage('Compilar Aplicación') {
+        stage('Ejecutar Aplicación') {
             steps {
                 // Ejecutar la aplicación
-                sh '. venv/bin/activate && python app.py'
+                sh 'python3 app.py'
             }
         }
     }
@@ -44,6 +35,7 @@ pipeline {
         }
     }
 }
+
 
 
 
