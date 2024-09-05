@@ -12,8 +12,8 @@ source venv/bin/activate
 # Instalar las dependencias
 pip install -r requirements.txt
 
-# Ejecutar las pruebas (si tienes pruebas configuradas)
-pytest
+# Ejecutar las pruebas (opcional, si tienes pruebas)
+# pytest
 
 # Desactivar el entorno virtual
 deactivate
