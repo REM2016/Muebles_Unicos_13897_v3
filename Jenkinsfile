@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Acceder al token almacenado en Jenkins bajo el nombre "dtrack-id"
         DEPENDENCY_TRACK_API_KEY = credentials('dtrack-id')  
-        DEPENDENCY_TRACK_URL = 'http://localhost:8081'  // Cambia esto si es necesario
+        DEPENDENCY_TRACK_URL = 'http://localhost:8080'  // Cambia esto si es necesario
     }
 
     stages {
