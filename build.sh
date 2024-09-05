@@ -3,9 +3,18 @@
 # Cambiar al directorio del proyecto
 cd /var/jenkins_home/workspace/test3
 
-# Instalar dependencias
-npm install
+# Crear un entorno virtual si es necesario
+python3 -m venv venv
 
-# Construir el proyecto
-npm run build
+# Activar el entorno virtual
+source venv/bin/activate
+
+# Instalar las dependencias
+pip install -r requirements.txt
+
+# Ejecutar las pruebas (si tienes pruebas configuradas)
+pytest
+
+# Desactivar el entorno virtual
+deactivate
 
