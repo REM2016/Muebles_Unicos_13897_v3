@@ -1,20 +1,11 @@
-#!/bin/bash
+#!/bin/bas#!/bin/bash
+set -e
 
-# Cambiar al directorio del proyecto
-cd /var/jenkins_home/workspace/test3
+# Activar el entorno virtual si es necesario
+# source venv/bin/activate
 
-# Crear un entorno virtual si es necesario
-python3 -m venv venv
-
-# Activar el entorno virtual
-source venv/bin/activate
-
-# Instalar las dependencias
+# Instalar dependencias desde requirements.txt
 pip install -r requirements.txt
 
-# Ejecutar las pruebas (opcional, si tienes pruebas)
-# pytest
-
-# Desactivar el entorno virtual
-deactivate
+# Aquí puedes agregar otros comandos de construcción o pruebas si es necesario
 
