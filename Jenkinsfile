@@ -1,10 +1,13 @@
 pipeline {
     agent any
 
+    parameters {
+        string(name: 'PROJECT_NAME', defaultValue: 'MueblesUnicos', description: 'Nombre del proyecto')
+        string(name: 'PROJECT_VERSION', defaultValue: '1.0', description: 'Versión del proyecto')
+    }
+
     environment {
         DT_URL = 'http://172.19.0.2:8080'
-        PROJECT_NAME = 'MueblesUnicos'
-        PROJECT_VERSION = '1.0'
     }
 
     stages {
@@ -36,8 +39,8 @@ pipeline {
                     withCredentials([string(credentialsId: 'dtrack-id', variable: 'API_KEY')]) {
                         // Publicar el archivo BOM a Dependency-Track
                         dependencyTrackPublisher artifact: 'bom.xml', 
-                                                 projectName: PROJECT_NAME, 
-                                                 projectVersion: PROJECT_VERSION, 
+                                                 projectName: params.PROJECT_NAME, 
+                                                 projectVersion: params.PROJECT_VERSION, 
                                                  dependencyTrackUrl: DT_URL, 
                                                  dependencyTrackApiKey: API_KEY, 
                                                  synchronous: true
@@ -65,6 +68,7 @@ pipeline {
         }
     }
 }
+
 
 
 
