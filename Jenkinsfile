@@ -1,47 +1,67 @@
 pipeline {
     agent any
 
+    environment {
+        DT_URL = 'http://172.19.0.2:8080'
+        PROJECT_NAME = 'MueblesUnicos'
+        PROJECT_VERSION = '1.0'
+    }
+
     stages {
-        stage('Checkout') {
-            steps {
-                
-                checkout scm
-            }
-        }
-
-        stage('Set up Python') {
+        stage('Download CycloneDX CLI') {
             steps {
                 script {
-                   
-                    sh 'sudo apt-get update'
-                    sh 'sudo apt-get install -y python3 python3-pip'
+                    // Descargar y hacer ejecutable CycloneDX CLI
+                    sh '''
+                    curl -sSfL https://github.com/CycloneDX/cyclonedx-cli/releases/download/v0.24.1/cyclonedx-linux-x64 --output cdx-cli
+                    chmod +x cdx-cli
+                    '''
                 }
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Generate BOM') {
             steps {
                 script {
-                    
-                    sh 'pip3 install -r requirements.txt'
+                    // Generar el archivo BOM
+                    sh './cdx-cli add files --no-input --output-format xml --exclude .git** --exclude cdx-cli --output-file bom.xml'
                 }
             }
         }
 
-        stage('Build') {
+        stage('Publish BOM to Dependency-Track') {
             steps {
                 script {
-                    
-                    sh 'python3 -m py_compile $(find . -name "*.py")'
+                    // Usa credenciales seguras para el API Key
+                    withCredentials([string(credentialsId: 'dtrack-id', variable: 'API_KEY')]) {
+                        // Publicar el archivo BOM a Dependency-Track
+                        dependencyTrackPublisher artifact: 'bom.xml', 
+                                                 projectName: PROJECT_NAME, 
+                                                 projectVersion: PROJECT_VERSION, 
+                                                 dependencyTrackUrl: DT_URL, 
+                                                 dependencyTrackApiKey: API_KEY, 
+                                                 synchronous: true
+                    }
+                }
+            }
+        }
+
+        stage('Process Findings') {
+            steps {
+                script {
+                    // Poll para obtener los resultados de Dependency-Track
+                    echo "Poll Dependency-Track para procesar el BOM en ${DT_URL}/projects/"
                 }
             }
         }
     }
 
     post {
-        always {
-           
-            cleanWs()
+        success {
+            echo "Pipeline ejecutado exitosamente."
+        }
+        failure {
+            echo "Pipeline falló. Revisa los logs."
         }
     }
 }
