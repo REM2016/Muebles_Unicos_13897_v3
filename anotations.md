@@ -1,3 +1,5 @@
+**No morir en el intento** -- Autor: Byron Caal
+
 **CAPITULO 1. Introducción**
 
 **DESCRIPCION DE LA ACTIVIDAD**
@@ -47,7 +49,7 @@ El objetivo de este desafio es la integración de la herramienta Dependency Trac
 
 - Ahora que lograste definir la memoria RAM para el demonio de Docker, procede a crear un archivo docker-compose.yml en cualquier IDE de Programación y copia las siguientes lineas de Codigo.
 
-    ```yml
+    ```yaml
     services:
     jenkins:
     image: jenkins/jenkins:lts
