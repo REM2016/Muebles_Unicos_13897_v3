@@ -1,11 +1,17 @@
-#!/bin/bas#!/bin/bash
+#!/bin/bash
 set -e
 
-# Activar el entorno virtual si es necesario
-# source venv/bin/activate
+# Crear un entorno virtual
+python3 -m venv venv
 
-# Instalar dependencias desde requirements.txt
+# Activar el entorno virtual
+source venv/bin/activate
+
+# Instalar dependencias
 pip install -r requirements.txt
 
-# Aquí puedes agregar otros comandos de construcción o pruebas si es necesario
+# Ejecutar pruebas si tienes alguna
+# pytest
+
+# Otros comandos necesarios para construir tu aplicación
 
