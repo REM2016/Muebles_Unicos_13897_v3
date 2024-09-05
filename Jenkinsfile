@@ -1,10 +1,5 @@
-
 pipeline {
     agent any
-
-    environment {
-        // Puedes agregar variables de entorno aquí si es necesario
-    }
 
     stages {
         stage('Checkout') {
@@ -36,8 +31,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Si necesitas compilar código, agrega comandos aquí
-                    // Por ejemplo, compilar archivos Python a bytecode (.pyc)
+                    // Compilar archivos Python a bytecode (.pyc)
                     sh 'python3 -m py_compile $(find . -name "*.py")'
                 }
             }
@@ -51,6 +45,7 @@ pipeline {
         }
     }
 }
+
 
 
 
