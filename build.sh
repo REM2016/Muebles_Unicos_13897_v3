@@ -1,17 +1,11 @@
 #!/bin/bash
 
-# Ejemplo de comandos para construir el proyecto
-echo "Starting build process..."
+# Cambiar al directorio del proyecto
+cd /var/jenkins_home/workspace/test3
 
-# Cambia al directorio del proyecto, si es necesario
-# cd /path/to/your/project
-
-# Ejecuta comandos para construir tu proyecto
-# Por ejemplo, para un proyecto de Node.js:
+# Instalar dependencias
 npm install
+
+# Construir el proyecto
 npm run build
 
-# O para un proyecto de Java:
-# mvn clean install
-
-echo "Build process completed."
