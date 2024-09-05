@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+        stage('Verificar Git') {
+            steps {
+                // Comprobar si Git está instalado y obtener la versión
+                sh 'git --version'
+            }
+        }
+
         stage('Checkout Código') {
             steps {
                 // Clonar el código del repositorio
@@ -12,14 +19,14 @@ pipeline {
         stage('Preparar Entorno') {
             steps {
                 // Crear entorno virtual e instalar dependencias
-                sh 'python3 -m venv venv' // Crear entorno virtual
+                sh 'python3 -m venv venv'
                 sh '. venv/bin/activate && pip install -r requirements.txt'
             }
         }
 
         stage('Compilar Aplicación') {
             steps {
-                // Ejecutar tu aplicación
+                // Ejecutar la aplicación
                 sh '. venv/bin/activate && python app.py'
             }
         }
@@ -37,5 +44,6 @@ pipeline {
         }
     }
 }
+
 
 
