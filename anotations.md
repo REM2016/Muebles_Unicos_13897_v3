@@ -81,4 +81,6 @@ El objetivo de este desafio es la integración de la herramienta Dependency Trac
      app_network:
         driver: bridge
     ```
-- Desde una terminal ejecuta el siguiente comando 
+- Desde una terminal ejecuta el siguiente comando ``` docker-compose up -d ``` la flag -d se utiliza para que los contenedores se ejecuten en segundo plano.
+- Ahora escribe el siguiente comando ```docker stats``` este comando se utiliza para ver el consumo de los milicores y memoria RAM.
+
