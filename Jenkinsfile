@@ -2,9 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout Código') {
+            steps {
+                // Clonar el código del repositorio
+                checkout scm
+            }
+        }
+
         stage('Preparar Entorno') {
             steps {
-                // Instalar dependencias
+                // Crear entorno virtual e instalar dependencias
                 sh 'python3 -m venv venv' // Crear entorno virtual
                 sh '. venv/bin/activate && pip install -r requirements.txt'
             }
@@ -12,7 +19,7 @@ pipeline {
 
         stage('Compilar Aplicación') {
             steps {
-                // Compilar o ejecutar tu aplicación para verificar que no haya errores
+                // Ejecutar tu aplicación
                 sh '. venv/bin/activate && python app.py'
             }
         }
