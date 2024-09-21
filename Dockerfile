@@ -11,7 +11,9 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Exponer el puerto en el que se ejecutará la aplicación Flask
-EXPOSE 8181
+EXPOSE 8585
+
+
 
 # Comando para ejecutar la aplicación Flask
 CMD ["python", "app.py"]

@@ -1,0 +1,26 @@
+{
+    "muebles": [
+      {
+        "id": 1,
+        "nombre": "Sofá Moderno",
+        "descripcion": "Sofá de 3 plazas con diseño moderno y tapizado de alta calidad.",
+        "precio": 299.99,
+        "imagen_url": "https://ejemplo.com/sofa_moderno.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Mesa de Centro",
+        "descripcion": "Mesa de centro de madera maciza con acabados rústicos.",
+        "precio": 149.99,
+        "imagen_url": "https://ejemplo.com/mesa_centro.jpg"
+      },
+      {
+        "id": 3,
+        "nombre": "Silla de Oficina",
+        "descripcion": "Silla ergonómica para oficina con soporte lumbar ajustable.",
+        "precio": 89.99,
+        "imagen_url": "https://ejemplo.com/silla_oficina.jpg"
+      }
+    ]
+  }
+  
